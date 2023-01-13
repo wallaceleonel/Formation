@@ -183,29 +183,12 @@ void PesquisarContas()
 
 ContaCorrente ConsultaPorNumeroConta(string? numeroConta)
 {
-    ContaCorrente conta = null;
-    for (int i = 0; i < listaDeContas.Count; i++)
-    {
-        if (listaDeContas[i].Conta.Equals(numeroConta))
-        {
-            conta = listaDeContas[i];
-        }
-    }
-    return conta;
-
+    return listaDeContas.FirstOrDefault(l => l.Conta == numeroConta);
 }
 
 ContaCorrente ConsultaPorCPFTitular(string? cpf)
 {
-    ContaCorrente conta = null;
-    for (int i = 0; i < listaDeContas.Count; i++)
-    {
-        if (listaDeContas[i].Titular.Cpf.Equals(cpf))
-        {
-            conta = listaDeContas[i];
-        }
-    }
-    return conta;
+    return listaDeContas.Where(l => l.Titular.Cpf == cpf).FirstOrDefault();
 }
 
 void OrdernarContas()
@@ -293,12 +276,7 @@ void ListarContas()
     }
     foreach (ContaCorrente item in listaDeContas)
     {
-        Console.WriteLine("===  Dados da Conta  ===");
-        Console.WriteLine("Número da Conta : " + item.Conta);
-        Console.WriteLine("Saldo da Conta : " + item.Saldo);
-        Console.WriteLine("Titular da Conta: " + item.Titular.Nome);
-        Console.WriteLine("CPF do Titular  : " + item.Titular.Cpf);
-        Console.WriteLine("Profissão do Titular: " + item.Titular.Profissao);
+        Console.WriteLine(item.ToString());
         Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         Console.ReadKey();
     }
