@@ -1,5 +1,4 @@
-﻿
-namespace bytebank.Modelos.ADM.Funcionarios
+﻿namespace bytebank.Modelos.ADM.Funcionarios
 {
     public class GerenteDeConta : FuncionarioAutenticavel
     {

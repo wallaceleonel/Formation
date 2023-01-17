@@ -1,6 +1,5 @@
 ﻿using bytebank.Modelos.ADM.SistemaInterno;
 
-
 namespace bytebank.Modelos.ADM.Funcionarios
 {
     public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel

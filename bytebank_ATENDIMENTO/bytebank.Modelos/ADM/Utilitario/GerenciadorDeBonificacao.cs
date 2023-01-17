@@ -1,10 +1,4 @@
-﻿
-using bytebank.Modelos.ADM.Funcionarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using bytebank.Modelos.ADM.Funcionarios;
 
 namespace bytebank.Modelos.ADMs.Utilitario
 {

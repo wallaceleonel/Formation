@@ -1,5 +1,4 @@
-﻿
-namespace bytebank.Modelos.ADM.SistemaInterno
+﻿namespace bytebank.Modelos.ADM.SistemaInterno
 {
     public class SistemaInterno
     {
