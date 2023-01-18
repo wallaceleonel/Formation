@@ -1,6 +1,6 @@
 ﻿using bytebank.Modelos.Conta;
 
-namespace bytebank_ATENDIMENTO.byteBank.Util
+namespace bytebankAtendimento.byteBank.Util
 {
     public class ListaContasCorrentes
     {
