@@ -1,4 +1,4 @@
-﻿namespace bytebank_ATENDIMENTO.bytebank.Exceptions
+﻿namespace bytebankAtendimento.bytebank.Exceptions
 {
     [Serializable]
     public class ByteBankException : Exception

@@ -1,7 +1,7 @@
 ﻿using bytebank.Modelos.Conta;
-using bytebank_ATENDIMENTO.bytebank.Exceptions;
+using bytebankAtendimento.bytebank.Exceptions;
 
-namespace bytebank_ATENDIMENTO.byteBank.Atendimento
+namespace bytebankAtendimento.byteBank.Atendimento
 {
     internal class ByteBankAtendimento
     {
