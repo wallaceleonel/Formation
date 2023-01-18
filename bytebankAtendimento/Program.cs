@@ -1,10 +1,14 @@
 ﻿using bytebank.Modelos.Conta;
-using bytebank_ATENDIMENTO.byteBank.Atendimento;
-using bytebank_ATENDIMENTO.byteBank.Util;
+using bytebankAtendimento.byteBank.Atendimento;
+using bytebankAtendimento.byteBank.Util;
+using ByteBankGeradorDeChavesPix;
 
 Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
 
 new ByteBankAtendimento().AtendimentoCliente();
+
+
+Console.WriteLine(GerarChavePix.GetChavePix());
 
 #region exemplos de uso de arrays
 //TestaArrayInt();
