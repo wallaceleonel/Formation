@@ -7,7 +7,7 @@ namespace FilmesApi.Controllers
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-        private static List<Filme> filmes = new List<Filme>();
+        private static readonly List<Filme> filmes = new();
 
         [HttpPost]
         public IActionResult AdicionaFilme([FromBody] Filme filme)
