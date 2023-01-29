@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "2Iclhmqn2CQOdvjSJSs3MR5ml09pCvsWQ1kRObNMYxgPgGKy0fC847qoJuMTRgyU9s1WuLALZm1TDeWWleFi3g==",
+  "success": true,
+  "projectFilePath": "C:\\.git\\formation\\estacionamento\\Alura.Estacionamento\\Alura.Estacionamento.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://playmovesvn.cloudapp.net:88/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
