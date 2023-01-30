@@ -12,12 +12,14 @@ namespace Estacionamento.Test
         {
             //Arrange
             var estacionamento = new Patio();
-            var veiculo = new Veiculo();
-            veiculo.Proprietario = "Nicolas";
-            veiculo.Tipo = TipoVeiculo.Automovel;
-            veiculo.Cor = "amarelo";
-            veiculo.Modelo = "fusca";
-            veiculo.Placa = "asd-9998";
+            var veiculo = new Veiculo
+            {
+                Proprietario = "Nicolas",
+                Tipo = TipoVeiculo.Automovel,
+                Cor = "amarelo",
+                Modelo = "fusca",
+                Placa = "asd-9998"
+            };
 
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
@@ -41,12 +43,14 @@ namespace Estacionamento.Test
         {
 
             //Arrange
-            Patio estacionamento = new Patio();
-            var veiculo = new Veiculo();
-            veiculo.Proprietario = proprietario;
-            veiculo.Placa = placa; 
-            veiculo.Cor = cor;
-            veiculo.Modelo = modelo;
+            Patio estacionamento = new();
+            var veiculo = new Veiculo
+            {
+                Proprietario = proprietario,
+                Placa = placa,
+                Cor = cor,
+                Modelo = modelo
+            };
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
 
@@ -56,6 +60,65 @@ namespace Estacionamento.Test
             //Assert
 
             Assert.Equal(2, faturento);
+        }
+
+        [Theory]
+        [InlineData("Andre", "ASD-1234", "preto", "Gol")]
+
+        public void LocalizaVeiculoNoPatio( string proprietatio,
+                                            string placa,
+                                            string cor,
+                                            string modelo)
+        {
+
+            //Arrange
+            Patio estacionamento = new();
+            var veiculo = new Veiculo
+            {
+                Proprietario = proprietatio,
+                Placa = placa,
+                Cor = cor,
+                Modelo = modelo
+            };
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+
+
+            //Act
+            var consulta = estacionamento.PesquisaVeiculo(placa);
+
+            //Assert 
+            Assert.Equal(placa, consulta.Placa);
+        }
+
+        [Fact]
+        public void AlteraDadosDoVeiculo()
+        {
+
+            //Arrange
+            Patio estacionamento = new();
+            var veiculo = new Veiculo
+            {
+                Proprietario = "jose",
+                Placa = "kcx-5456",
+                Cor = "verde",
+                Modelo = "opala",
+            };
+            estacionamento.RegistrarEntradaVeiculo(veiculo);
+
+            var veiculoAlterado = new Veiculo
+            {
+                Proprietario = "jose",
+                Placa = "kcx-5456",
+                Cor = "verde",
+                Modelo = "azul",
+            };
+
+            //Act
+            Veiculo alterado = estacionamento.AlteraDadosDoVeiculo(veiculoAlterado);
+
+            //Assert
+            Assert.Equal(alterado.Cor, veiculoAlterado.Cor);
+
         }
     }
 }

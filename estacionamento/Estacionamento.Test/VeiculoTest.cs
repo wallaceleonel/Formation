@@ -1,5 +1,4 @@
 using Alura.Estacionamento.Modelos;
-using System;
 using Xunit;
 
 namespace Estacionamento.Test
