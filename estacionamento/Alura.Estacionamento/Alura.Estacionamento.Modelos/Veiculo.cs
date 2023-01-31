@@ -103,6 +103,15 @@ namespace Alura.Estacionamento.Modelos
            Proprietario = proprietario;
         }
 
-       
+        public override string ToString()
+        {
+           return $"Ficha do veiculo:\n" +
+                $"tipo do veiculo:{this.Tipo.ToString()}\n" +
+                $"proprietario:{this.Proprietario}\n" +
+                $"modelo:{this.Modelo}\n" +
+                $"cor:{this.Cor}\n" +
+                $"placa:{this.Placa}\n";
+        }
+
     }
 }

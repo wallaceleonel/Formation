@@ -8,7 +8,7 @@ namespace Estacionamento.Test
     {
         [Fact(DisplayName ="teste n 1")]
         [Trait("Funcionalidade", "Faturamento")]
-        public void ValidaFaturamento()
+        public void ValidaFaturamentoDoPatioCom1Veiculo()
         {
             //Arrange
             var estacionamento = new Patio();
@@ -65,7 +65,7 @@ namespace Estacionamento.Test
         [Theory]
         [InlineData("Andre", "ASD-1234", "preto", "Gol")]
 
-        public void LocalizaVeiculoNoPatio( string proprietatio,
+        public void LocalizaVeiculoNoPatioComBaseNaPlaca( string proprietatio,
                                             string placa,
                                             string cor,
                                             string modelo)

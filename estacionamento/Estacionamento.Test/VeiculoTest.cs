@@ -1,3 +1,4 @@
+using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using Xunit;
 
@@ -6,7 +7,7 @@ namespace Estacionamento.Test
     public class VeiculoTeste
     {
         [Fact]
-        public void TestaVeiculoAcelerar()
+        public void TestaVeiculoAcelerarComParametro10()
         {
             //Arrange
             var veiculo = new Veiculo();
@@ -17,7 +18,7 @@ namespace Estacionamento.Test
         }
 
         [Fact]
-        public void TestaVeiculoFreiar()
+        public void TestaVeiculoFreiarComParametro10()
         {
             //Arrange
             var veiculo  = new Veiculo();
@@ -25,6 +26,26 @@ namespace Estacionamento.Test
             veiculo.Frear(10);
             //Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
+        }
+
+        [Fact]
+        public void FichaDeInformacaoDoVeiculo()
+        {
+            //Arrange
+            var carro = new Veiculo
+            {
+                Tipo = TipoVeiculo.Automovel,
+                Proprietario = "Wallace",
+                Placa = "ZAP-7419",
+                Cor = "Azul",
+                Modelo = "Variante"
+            };
+
+            //Act
+            string dados = carro.ToString();
+
+            //Assert
+            Assert.Contains("Ficha do veiculo:", dados);
         }
     }
 }
