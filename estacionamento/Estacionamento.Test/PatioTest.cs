@@ -65,7 +65,7 @@ namespace Estacionamento.Test
         [Theory]
         [InlineData("Andre", "ASD-1234", "preto", "Gol")]
 
-        public void LocalizaVeiculoNoPatioComBaseNaPlaca( string proprietatio,
+        public void LocalizaVeiculoNoPatioComBaseNoIdTicket( string proprietatio,
                                             string placa,
                                             string cor,
                                             string modelo)
@@ -84,10 +84,10 @@ namespace Estacionamento.Test
 
 
             //Act
-            var consulta = estacionamento.PesquisaVeiculo(placa);
+            var consulta = estacionamento.PesquisaVeiculo(veiculo.IdTicket);
 
             //Assert 
-            Assert.Equal(placa, consulta.Placa);
+            Assert.Contains("### Gerar ticket ###", consulta.Ticket);
         }
 
         [Fact]
